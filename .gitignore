@@ -1,0 +1,18 @@
+# Ignore macOS system files
+.DS_Store
+
+# Node.js dependencies
+node_modules/
+
+# Log files
+*.log
+
+# Environment files (e.g., .env)
+.env
+
+# Build output (e.g., dist or build folders)
+dist/
+build/
+
+# IDE settings (e.g., VS Code)
+.vscode/
