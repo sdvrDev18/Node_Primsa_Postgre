@@ -3,6 +3,7 @@
 // Here both can run simultaneously as each uses a different PORT
 
 import express from "express";
+import router from "./router.js";
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.get("/", (req, res) => {
   res.status(200);
   res.send("this is working!");
 });
+
+app.use("/api", router);
 
 app.listen(3001, () => {
   console.log("express server is up!!");
