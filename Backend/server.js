@@ -4,8 +4,22 @@
 
 import express from "express";
 import router from "./router.js";
+import morgan from "morgan";
+import cors from "cors";
 
 const app = express();
+
+//--Middlewares--
+app.use(cors());
+app.use(morgan("dev")); //morgan used for tracking requests like a console
+app.use(express.json()); // Automatically parse incoming JSON request bodies and make them available as req.body
+app.use(express.urlencoded({ extended: true })); // It tells Express to parse URL-encoded form data
+
+//--Custom Middleware--
+app.use((req, res, next) => {
+  req.newConstant = "CUSTOM";
+  next();
+});
 
 // Instead of uisngf create server and checking the method explicitely using req.get()
 // express gives direct functions like get, post; which automatically checks for that condition.
