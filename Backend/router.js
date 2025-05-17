@@ -4,9 +4,25 @@ const router = Router();
 
 // Product Routes
 
+// router.get("/product", (req, res) => {
+//   console.log("INSIDE PRODUCT route");
+//   res.status(200);
+//   res.json({ message: req.newConstant });
+// });
+
 router.get("/product", (req, res) => {
-  res.json({ message: req.newConstant });
+  console.log("INSIDE PRODUCT route");
+
+  try {
+    console.log("req.user:", req.user);
+    console.log("req.newConstant:", req.newConstant);
+    res.json({ message: req.newConstant || "default" });
+  } catch (e) {
+    console.error("Handler error:", e);
+    res.status(500).json({ error: "Handler failed" });
+  }
 });
+
 router.get("/product/:id", () => {});
 router.put("/product/:id", () => {});
 router.post("/product", () => {});
