@@ -1,0 +1,10 @@
+--Payloads--
+
+1. /user -  Dont required JWT for create new user.
+
+-- 
+{
+  "username": "Sachdev",
+  "password": "admin"
+}
+--
