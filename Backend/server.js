@@ -3,7 +3,7 @@
 // Here both can run simultaneously as each uses a different PORT
 
 import * as dotenv from "dotenv";
-dotenv.config({ path: "../.env" });
+dotenv.config();
 
 import express from "express";
 import router from "./router.js";
